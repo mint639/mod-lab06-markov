@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-using std::string;
+using namespace std;
 
 class Markov {
  private:
