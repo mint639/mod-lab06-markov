@@ -38,6 +38,7 @@ std::string Markov::TextGen() {
         prefix prfx;
         for (int i = 0; i < NPREF; i++)
             prfx.push_back(words.at(i));
+        unsigned int seed = 1;
         int random = rand_r(&seed) % statelab.find(prfx)->second.size();
         if (statelab.find(prfx)->second.at(random) == "<Last_Prefix>") {
             for (int i = 0; i < NPREF; i++)
