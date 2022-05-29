@@ -1,5 +1,6 @@
 // Copyright 2022 UNN-IASR
 #include <time.h>
+#include <stdlib.h>
 #include "textgen.h"
 
 Markov::Markov(std::vector<std::string> words, int prfx_count, int gen_count) {
@@ -37,8 +38,7 @@ std::string Markov::TextGen() {
         prefix prfx;
         for (int i = 0; i < NPREF; i++)
             prfx.push_back(words.at(i));
-        int rand_r (unsigned int *seed) = 1;
-        int random = rand_r(&seed) % statelab.find(prfx)->second.size();
+        int random = rand_r(1) % statelab.find(prfx)->second.size();
         if (statelab.find(prfx)->second.at(random) == "<Last_Prefix>") {
             for (int i = 0; i < NPREF; i++)
                 output += words.at(i) + ' ';
