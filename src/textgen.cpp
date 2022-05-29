@@ -1,3 +1,4 @@
+// Copyright 2022 UNN-IASR
 #include <time.h>
 #include "textgen.h"
 
@@ -36,7 +37,7 @@ string Markov::TextGen() {
         prefix prfx;
         for (int i = 0; i < NPREF; i++)
             prfx.push_back(words.at(i));
-        int random = rand() % statelab.find(prfx)->second.size();
+        int random = rand_r() % statelab.find(prfx)->second.size();
         if (statelab.find(prfx)->second.at(random) == "<Last_Prefix>") {
             for (int i = 0; i < NPREF; i++)
                 output += words.at(i) + ' ';
