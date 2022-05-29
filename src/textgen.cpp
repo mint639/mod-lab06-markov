@@ -2,7 +2,7 @@
 #include <time.h>
 #include "textgen.h"
 
-Markov::Markov(vector<string> words, int prfx_count, int gen_count) {
+Markov::Markov(std::vector<std::string> words, int prfx_count, int gen_count) {
     NPREF = prfx_count;
     MAXGEN = gen_count;
 
@@ -17,7 +17,7 @@ Markov::Markov(vector<string> words, int prfx_count, int gen_count) {
     }
 }
 
-Markov::Markov(map<prefix, vector<string>> Gen, int gen_count) {
+Markov::Markov(std::map<prefix, std::vector<std::string>> Gen, int gen_count) {
     statelab = Gen;
     NPREF = statelab.begin()->first.size();
     MAXGEN = gen_count;
