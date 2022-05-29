@@ -23,7 +23,7 @@ Markov::Markov(std::map<prefix, std::vector<std::string>> Gen, int gen_count) {
     MAXGEN = gen_count;
 }
 
-string Markov::TextGen() {
+stdin Markov::TextGen() {
     srand(time(NULL));
     std::string output;
     std::deque<std::string> words;
