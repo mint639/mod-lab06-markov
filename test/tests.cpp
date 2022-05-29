@@ -38,7 +38,8 @@ TEST(task4, test1) {
 }
 
 TEST(task5, test1) {
-    vector<string> words{"If", "you", "want", "to", "be", "somebody,", "somebody", "really", "special,", "be", "yourself."};
+    vector<string> words{"If", "you", "want", "to", "be", "somebody,",
+                         "somebody", "really", "special,", "be", "yourself."};
     Markov Gen(words, 2, 100);
     string output = Gen.TextGen();
     if (output[output.length() - 2] == '.')
