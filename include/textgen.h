@@ -1,6 +1,4 @@
 // Copyright 2022 UNN-IASR
-#ifndef INCLUDE_TEXTGEN_H_
-#define INCLUDE_TEXTGEN_H_
 #include <deque>
 #include <map>
 #include <string>
@@ -20,4 +18,3 @@ class Markov {
     Markov(map<prefix, vector<string>> Gen, int gen_count);
     string TextGen();
 };
-#endif // INCLUDE_TEXTGEN_H_
