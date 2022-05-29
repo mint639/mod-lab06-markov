@@ -23,10 +23,10 @@ Markov::Markov(std::map<prefix, std::vector<std::string>> Gen, int gen_count) {
     MAXGEN = gen_count;
 }
 
-std::string Markov::TextGen() {
+string Markov::TextGen() {
     srand(time(NULL));
-    string output;
-    deque<string> words;
+    std::string output;
+    std::deque<std::string> words;
 
     auto it = statelab.begin();
     advance(it, rand() % statelab.size());
