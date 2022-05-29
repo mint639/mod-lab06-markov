@@ -41,7 +41,7 @@ TEST(task5, test1) {
     std::vector<std::string> words{"If", "you", "want", "to", "be", "somebody,",
                          "somebody", "really", "special,", "be", "yourself."};
     Markov Gen(words, 2, 100);
-    string output = Gen.TextGen();
+    std::string output = Gen.TextGen();
     if (output[output.length() - 2] == '.')
         ASSERT_EQ('.', output[output.length() - 2]);
     else
