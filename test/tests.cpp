@@ -3,17 +3,17 @@
 #include "textgen.h"
 
 TEST(task2, test1) {
-    vector<string> words{"Hello", "World"};
+    std::vector<std::string> words{"Hello", "World"};
     Markov Gen(words, 2, 100);
     ASSERT_STREQ("Hello World ", Gen.TextGen().c_str());
 }
 
 TEST(task3, test1) {
-    map<deque<string>, vector<string>> dict;
+    std::map<std::deque<std::string>, std::vector<std::string>> dict;
     dict[{"Enjoy", "the"}].push_back("ride");
     dict[{"the", "ride"}].push_back("<Last_Prefix>");
     Markov Gen(dict, 100);
-    string output = Gen.TextGen();
+    std::string output = Gen.TextGen();
     if (output[0] == 'E')
         ASSERT_STREQ("Enjoy the ride ", output.c_str());
     else
@@ -21,14 +21,14 @@ TEST(task3, test1) {
 }
 
 TEST(task4, test1) {
-    map<deque<string>, vector<string>> dict;
+    std::map<std::deque<std::string>, std::vector<std::string>> dict;
     dict[{"Enjoy", "the"}].push_back("ride");
     dict[{"Enjoy", "the"}].push_back("moment");
     dict[{"the", "ride"}].push_back("<Last_Prefix>");
     dict[{"the", "moment"}].push_back("<Last_Prefix>");
 
     Markov Gen(dict, 100);
-    string output = Gen.TextGen();
+    std::string output = Gen.TextGen();
     if (output[0] == 't')
         ASSERT_EQ('t', output[0]);
     else if (output[output[output.length() - 2]] == 'e')
@@ -38,7 +38,7 @@ TEST(task4, test1) {
 }
 
 TEST(task5, test1) {
-    vector<string> words{"If", "you", "want", "to", "be", "somebody,",
+    std::vector<std::string> words{"If", "you", "want", "to", "be", "somebody,",
                          "somebody", "really", "special,", "be", "yourself."};
     Markov Gen(words, 2, 100);
     string output = Gen.TextGen();
