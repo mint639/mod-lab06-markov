@@ -4,12 +4,10 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class Markov {
  private:
-    typedef deque<string> prefix;
-    map<prefix, vector<string>> statelab;
+    typedef std::deque<std::tring> prefix;
+    std::map<prefix, std::vector<std::string>> statelab;
     int NPREF = 2;
     int MAXGEN = 1000;
 
