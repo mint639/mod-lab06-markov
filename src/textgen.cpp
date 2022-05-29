@@ -29,7 +29,7 @@ std::string Markov::TextGen() {
     std::deque<std::string> words;
 
     auto it = statelab.begin();
-    advance(it, rand() % statelab.size());
+    advance(it, rand_r() % statelab.size());
     for (int i = 0; i < NPREF; i++)
         words.push_back(it->first.at(i));
 
