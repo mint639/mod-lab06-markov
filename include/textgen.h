@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-std::;
+using namespace std;
 
 class Markov {
  private:
