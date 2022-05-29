@@ -2,16 +2,6 @@
 #include <gtest/gtest.h>
 #include "textgen.h"
 
-TEST(task1, test1) {
-    vector<string> words{"What", "a", "beautiful", "day!"};
-    Markov Gen(words, 3, 100);
-    string output = Gen.TextGen();
-    if (output[0] = 'W')
-        ASSERT_STREQ("What a beautiful day! ", output.c_str());
-    else
-        ASSERT_STREQ("a beautiful day! ", output.c_str());
-}
-
 TEST(task2, test1) {
     vector<string> words{"Hello", "World"};
     Markov Gen(words, 2, 100);
