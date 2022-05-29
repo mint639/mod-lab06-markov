@@ -1,5 +1,5 @@
 // Copyright 2022 UNN-IASR
-#pragma_once
+#pragma once
 
 #include <deque>
 #include <map>
