@@ -1,4 +1,6 @@
 // Copyright 2022 UNN-IASR
+#pragma_once
+
 #include <deque>
 #include <map>
 #include <string>
@@ -14,6 +16,6 @@ class Markov {
  public:
     Markov(std::vector<std::string> allwords, int prfx_count, int gen_count);
     Markov(std::map<prefix, std::vector<std::string>> Gen, int gen_count);
-    std::string TextGen();
+    string TextGen();
 };
 
