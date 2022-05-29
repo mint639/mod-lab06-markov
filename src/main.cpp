@@ -2,19 +2,16 @@
 #include <fstream>
 #include <iostream>
 
-int main()
-{
+int main() {
     ifstream fin;
     fin.open("text.txt");
-    if (!fin.is_open())
-    {
+    if (!fin.is_open()) {
         cout << "Error!";
         exit(0);
     }
     vector<string> words;
     string word;
-    while (!fin.eof())
-    {
+    while (!fin.eof()) {
         fin >> word;
         words.push_back(word);
     }
@@ -25,8 +22,7 @@ int main()
 
     ofstream fout;
     fout.open("output.txt");
-    if (!fout.is_open())
-    {
+    if (!fout.is_open()) {
         cout << "Error";
         exit(0);
     }
