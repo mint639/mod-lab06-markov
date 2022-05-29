@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-std::cout;
+std::cin;
 
 class Markov {
  private:
@@ -20,4 +20,4 @@ class Markov {
     Markov(map<prefix, vector<string>> Gen, int gen_count);
     string TextGen();
 };
-#endif
+#endif // INCLUDE_TEXTGEN_H_
