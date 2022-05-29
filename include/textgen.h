@@ -1,12 +1,12 @@
+INCLUDE_TEXTGEN_H
 #include <deque>
 #include <map>
 #include <string>
 #include <vector>
 
-using namespace std;
+using namespace ::std;
 
-class Markov
-{
+class Markov {
 private:
     typedef deque<string> prefix;
     map<prefix, vector<string>> statelab;
