@@ -29,7 +29,7 @@ std::string Markov::TextGen() {
     std::deque<std::string> words;
 
     auto it = statelab.begin();
-    advance(it, rand_r() % statelab.size());
+    advance(it, rand() % statelab.size());
     for (int i = 0; i < NPREF; i++)
         words.push_back(it->first.at(i));
 
@@ -37,7 +37,7 @@ std::string Markov::TextGen() {
         prefix prfx;
         for (int i = 0; i < NPREF; i++)
             prfx.push_back(words.at(i));
-        int random = rand_r() % statelab.find(prfx)->second.size();
+        int random = rand_r(1) % statelab.find(prfx)->second.size();
         if (statelab.find(prfx)->second.at(random) == "<Last_Prefix>") {
             for (int i = 0; i < NPREF; i++)
                 output += words.at(i) + ' ';
